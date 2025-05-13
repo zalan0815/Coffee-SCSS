@@ -1,0 +1,46 @@
+$bg: #E4E0E1;
+$light: #D6C0B3;
+$normal: #AB886D;
+$dark: #493628;
+
+body {
+    background-color: $bg;
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+}
+
+#nooverflow {
+    overflow-y: hidden;
+}
+
+h1 {
+    color: $dark;
+    background-color: $normal;
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 70px;
+}
+
+.h1icon {
+    font-size: inherit;
+    width: 1em;
+    height: 0.58em;
+    margin-right: 3px;
+    margin-left: 3px;
+}
+
+.mirror {
+    transform: scale(-1, 1);
+}
+
+#indexbody {
+    background-image: url('img/Coffee_Beans_Background.jpg');
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
