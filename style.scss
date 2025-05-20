@@ -4,43 +4,119 @@ $normal: #AB886D;
 $dark: #493628;
 
 body {
-    background-color: $bg;
+	padding-top: 100vh;
+    background-color: $light;
     margin: 0;
     padding: 0;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 20px;
-}
-
-#nooverflow {
-    overflow-y: hidden;
-}
-
-h1 {
-    color: $dark;
-    background-color: $normal;
-    margin: 0;
-    padding: 10px;
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 70px;
-}
-
-.h1icon {
-    font-size: inherit;
-    width: 1em;
-    height: 0.58em;
-    margin-right: 3px;
-    margin-left: 3px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
 }
 
 .mirror {
     transform: scale(-1, 1);
 }
 
-#indexbody {
-    background-image: url('img/Coffee_Beans_Background.jpg');
-    background-size: cover;
-    width: 100%;
+@supports(animation-range: 0vh 90vh) {
+    @keyframes sticky-parallax-header-move-and-size {
+        from {
+            background-position: 50% 0;
+        }
+
+        to {
+            background-position: 50% 100%;
+            background-color: $dark;
+            height: 10vh;
+            font-size: 2em;
+        }
+    }
+
+    #sticky-parallax-header {
+        position: fixed;
+        top: 0;
+        animation: sticky-parallax-header-move-and-size linear forwards;
+        animation-timeline: scroll();
+        animation-range: 0vh 90vh;
+    }
+
+    body {
+        padding-top: 100vh;
+    }
+}
+
+#sticky-parallax-header {
+    color: white;
     height: 100vh;
+    width: 100%;
+	background-image: url("img/Coffee_Beans_Background.jpg");
+    background-size: cover;
+    background-position: 50% 50%;
+    background-blend-mode: soft-light;
+
+    display: grid;
+    place-items: center;
+    text-align: center;
+
+    font-size: calc(10vw + 1em);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#content {
+    display: block;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    margin: 0 auto 0;
+    width: 80vw;
+    max-width: 60em;
+}
+
+#content {
+    h2 {
+        text-align: center;
+        margin-top: 1em;
+        margin-bottom: 2em;
+    }
+
+    p {
+        text-align: center;
+    }
+    
+    button {
+        display: block;
+        background-color: $dark;
+        color: white;
+        box-sizing: border-box;
+        border: 0;
+        border-radius: 20px;
+        padding: 1em 1.8em;
+        cursor: pointer;
+        margin: 0 auto 5em;
+        font-size: 20px;
+    }
+    button:hover{
+        background-color: $normal;
+    }
+
+    .p {
+        display: flex;
+    }
+    .p {
+        img {
+            width: 30%;
+            border-radius: 10%;
+            margin: 0 5px 0 5px;
+        }
+    }
+}
+
+footer {
+    display: flex;
+    font-size: 15px;
+    color: white;
+    background-color: $dark;
+    height: 10vh;
+    justify-content: center;
+    align-items: center;
+    padding: auto 0;
 }
