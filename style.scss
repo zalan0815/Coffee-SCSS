@@ -93,9 +93,11 @@ body {
         cursor: pointer;
         margin: 0 auto 5em;
         font-size: 20px;
+        transition: transform 0.2s ease, background-color 0.2s ease;
     }
     button:hover{
         background-color: $normal;
+        transform: scale(1.05);
     }
 
     .p {
@@ -108,6 +110,30 @@ body {
             margin: 0 5px 0 5px;
         }
     }
+}
+
+@keyframes reveal {
+	from {
+		opacity: 0;
+		clip-path: inset(45% 20% 45% 20%);
+	}
+	to {
+		opacity: 1;
+		clip-path: inset(0% 0% 0% 0%);
+	}
+}
+
+.revealing {
+	/* Create View Timeline */
+	view-timeline-name: --revealing;
+	view-timeline-axis: block;
+
+	/* Attach animation, linked to the  View Timeline */
+	animation: linear reveal both;
+	animation-timeline: --revealing;
+
+	/* Tweak range when effect should run*/
+	animation-range: entry 25% cover 50%;
 }
 
 footer {
