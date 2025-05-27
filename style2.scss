@@ -1,0 +1,44 @@
+$bg: #E4E0E1;
+$light: #D6C0B3;
+$normal: #AB886D;
+$dark: #493628;
+
+#sticky-parallax-header {
+    background-image: url(img/storia-del-caffe.webp);
+    background-color: $dark;
+}
+
+#content {
+    display: block;
+}
+
+@keyframes animate-in-and-out {
+	from {
+		// opacity: 0;
+        transform: translateY(100%);
+	}
+	to {
+		// opacity: 1;
+        transform: translateY(0);
+	}
+}
+
+#list-view {
+    margin-bottom: 100px;
+    display: block;
+}
+#list-view .p2 {
+	/* Create View Timeline */
+	view-timeline-name: --revealing2;
+	view-timeline-axis: block;
+
+	/* Attach animation, linked to the  View Timeline */
+	animation: linear animate-in-and-out both;
+	animation-timeline: --revealing2;
+
+	/* Tweak range when effect should run*/
+	animation-range: entry 25% cover 45%;
+
+    margin-top: 50px;
+    text-align: center;
+}

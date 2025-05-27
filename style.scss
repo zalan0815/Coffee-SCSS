@@ -51,6 +51,7 @@ body {
     background-size: cover;
     background-position: 50% 50%;
     background-blend-mode: soft-light;
+    z-index: 100;
 
     display: grid;
     place-items: center;
@@ -71,6 +72,26 @@ body {
     max-width: 60em;
 }
 
+button {
+    display: block;
+    background-color: $dark;
+    color: white;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 20px;
+    padding: 1em 1.8em;
+    cursor: pointer;
+    margin: 0 auto 5em;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+button:hover{
+    background-color: $normal;
+    transform: scale(1.05);
+}
+
 #content {
     h2 {
         text-align: center;
@@ -82,33 +103,28 @@ body {
         text-align: center;
     }
     
-    button {
-        display: block;
-        background-color: $dark;
-        color: white;
-        box-sizing: border-box;
-        border: 0;
-        border-radius: 20px;
-        padding: 1em 1.8em;
-        cursor: pointer;
-        margin: 0 auto 5em;
-        font-size: 20px;
-        transition: transform 0.2s ease, background-color 0.2s ease;
-    }
-    button:hover{
-        background-color: $normal;
-        transform: scale(1.05);
-    }
 
     .p {
         display: flex;
     }
     .p {
         img {
-            width: 30%;
+            width: 50%;
             border-radius: 10%;
             margin: 0 5px 0 5px;
         }
+    }
+
+    #a {
+        color: black;
+        text-decoration: underline;
+    }
+    #a:hover {
+        color: $dark;
+    }
+
+    #none {
+        text-decoration: none;
     }
 }
 
@@ -133,7 +149,35 @@ body {
 	animation-timeline: --revealing;
 
 	/* Tweak range when effect should run*/
-	animation-range: entry 25% cover 50%;
+	animation-range: entry 25% cover 45%;
+
+    margin-top: 100px;
+}
+
+.alert {
+    color: red;
+    text-align: center;
+    margin-top: 100px;
+
+    /* Create View Timeline */
+	view-timeline-name: --highlighting;
+	view-timeline-axis: block;
+
+	/* Attach animation, linked to the  View Timeline */
+	animation: linear highlight both;
+	animation-timeline: --highlighting;
+
+	/* Tweak range when effect should run*/
+	animation-range: entry 25% cover 30%;
+}
+
+@keyframes highlight {
+    from {
+        opacity: 10%;
+    }
+    to {
+        opacity: 100%;
+    }
 }
 
 footer {

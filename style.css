@@ -42,6 +42,7 @@ body {
   background-size: cover;
   background-position: 50% 50%;
   background-blend-mode: soft-light;
+  z-index: 100;
   display: grid;
   place-items: center;
   text-align: center;
@@ -60,15 +61,7 @@ body {
   max-width: 60em;
 }
 
-#content h2 {
-  text-align: center;
-  margin-top: 1em;
-  margin-bottom: 2em;
-}
-#content p {
-  text-align: center;
-}
-#content button {
+button {
   display: block;
   background-color: #493628;
   color: white;
@@ -79,19 +72,41 @@ body {
   cursor: pointer;
   margin: 0 auto 5em;
   font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
-#content button:hover {
+
+button:hover {
   background-color: #AB886D;
   transform: scale(1.05);
+}
+
+#content h2 {
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+#content p {
+  text-align: center;
 }
 #content .p {
   display: flex;
 }
 #content .p img {
-  width: 30%;
+  width: 50%;
   border-radius: 10%;
   margin: 0 5px 0 5px;
+}
+#content #a {
+  color: black;
+  text-decoration: underline;
+}
+#content #a:hover {
+  color: #493628;
+}
+#content #none {
+  text-decoration: none;
 }
 
 @keyframes reveal {
@@ -112,9 +127,32 @@ body {
   animation: linear reveal both;
   animation-timeline: --revealing;
   /* Tweak range when effect should run*/
-  animation-range: entry 25% cover 50%;
+  animation-range: entry 25% cover 45%;
+  margin-top: 100px;
 }
 
+.alert {
+  color: red;
+  text-align: center;
+  margin-top: 100px;
+  /* Create View Timeline */
+  view-timeline-name: --highlighting;
+  view-timeline-axis: block;
+  /* Attach animation, linked to the  View Timeline */
+  animation: linear highlight both;
+  animation-timeline: --highlighting;
+  /* Tweak range when effect should run*/
+  animation-range: entry 25% cover 30%;
+}
+
+@keyframes highlight {
+  from {
+    opacity: 10%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
 footer {
   display: flex;
   font-size: 15px;
