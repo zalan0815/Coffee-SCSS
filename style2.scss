@@ -23,22 +23,27 @@ $dark: #493628;
 	}
 }
 
+// #list-view {
+//     margin-bottom: 100px;
+//     display: block;
+// }
 #list-view {
-    margin-bottom: 100px;
+	margin-bottom: 100px;
     display: block;
-}
-#list-view .p2 {
-	/* Create View Timeline */
-	view-timeline-name: --revealing2;
-	view-timeline-axis: block;
 
-	/* Attach animation, linked to the  View Timeline */
-	animation: linear animate-in-and-out both;
-	animation-timeline: --revealing2;
+	.p2 {
+		/* Create View Timeline */
+		view-timeline-name: --revealing2;
+		view-timeline-axis: block;
 
-	/* Tweak range when effect should run*/
-	animation-range: entry 25% cover 45%;
+		/* Attach animation, linked to the  View Timeline */
+		animation: linear animate-in-and-out both;
+		animation-timeline: --revealing2;
 
-    margin-top: 50px;
-    text-align: center;
+		/* Tweak range when effect should run*/
+		animation-range: entry 25% cover 45%;
+
+		margin-top: 50px;
+		text-align: center;
+	}
 }

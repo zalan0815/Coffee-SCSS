@@ -1,0 +1,14 @@
+#sticky-parallax-header {
+  background-image: url(img/cappuccino.jpg);
+  background-color: #493628;
+}
+
+#list-view img {
+  width: 568.89px;
+  height: 379.25px;
+  border-radius: 10%;
+  margin: 0 5px 0 5px;
+  object-fit: cover;
+}
+
+/*# sourceMappingURL=style3.css.map */

@@ -1,0 +1,19 @@
+$bg: #E4E0E1;
+$light: #D6C0B3;
+$normal: #AB886D;
+$dark: #493628;
+
+#sticky-parallax-header {
+    background-image: url(img/cappuccino.jpg);
+    background-color: $dark;
+}
+
+#list-view {
+    img {
+        width: 568.89px;
+        height: 379.25px;
+        border-radius: 10%;
+        margin: 0 5px 0 5px;
+        object-fit: cover;
+    }
+}
